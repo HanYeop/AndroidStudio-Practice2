@@ -1,2 +1,6 @@
 # AndroidStudio-Practice2
 (2021.05.20~) 안드로이드 학습 내용 저장소
+
+## Lottie 라이브러리 사용하여 애니메이션 만들기
+
+https://hanyeop.tistory.com/208
