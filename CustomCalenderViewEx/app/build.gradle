@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.hanyeop.materialcalendarviewex"
+        applicationId "com.hanyeop.customcalenderviewex"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
@@ -42,7 +42,4 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    def version = "2.0.1"
-    implementation "com.github.prolificinteractive:material-calendarview:${version}"
 }
