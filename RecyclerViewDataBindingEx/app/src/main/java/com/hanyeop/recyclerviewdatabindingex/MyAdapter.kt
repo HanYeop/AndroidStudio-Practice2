@@ -8,10 +8,10 @@ import com.hanyeop.recyclerviewdatabindingex.databinding.MainItemBinding
 class MyAdapter()
     : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
-    var userList = mutableListOf<User>()
+    var userList = arrayListOf<User>()
 
     // 생성된 뷰 홀더에 값 지정
-    class MyViewHolder(val binding: MainItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(private val binding: MainItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(currentUser : User) {
             binding.user = currentUser
         }
@@ -31,5 +31,10 @@ class MyAdapter()
     // 뷰 홀더의 개수 리턴
     override fun getItemCount(): Int {
         return userList.size
+    }
+
+    fun setData(data : ArrayList<User>){
+        userList = data
+        notifyDataSetChanged()
     }
 }
