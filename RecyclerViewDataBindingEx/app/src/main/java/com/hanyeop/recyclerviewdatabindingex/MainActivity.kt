@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
-    private lateinit var myAdapter: MyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,13 +21,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         binding.viewModel = mainViewModel
 
-        // 리사이클러뷰 어댑터 연결
-        myAdapter = MyAdapter()
-        binding.recyclerView.adapter = myAdapter
-
-        mainViewModel.userList.observe(this, Observer {
-            myAdapter.setData(it)
-        })
-
+        // 뷰모델을 LifeCycle 에 종속시킴, LifeCycle 동안 옵저버 역할을 함
+        binding.lifecycleOwner = this
     }
 }
