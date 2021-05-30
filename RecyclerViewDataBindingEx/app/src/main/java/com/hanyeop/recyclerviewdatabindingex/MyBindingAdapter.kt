@@ -9,8 +9,11 @@ object MyBindingAdapter{
     @JvmStatic
     fun setItems(recyclerView: RecyclerView, items : ArrayList<User>){
 
-        if(recyclerView.adapter == null)
-            recyclerView.adapter = MyAdapter()
+        if(recyclerView.adapter == null) {
+            val adapter = MyAdapter()
+            adapter.setHasStableIds(true)
+            recyclerView.adapter = adapter
+        }
 
         val myAdapter = recyclerView.adapter as MyAdapter
 

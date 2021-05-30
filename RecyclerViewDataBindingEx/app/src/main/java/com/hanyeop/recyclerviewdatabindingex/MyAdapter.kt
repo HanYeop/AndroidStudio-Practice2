@@ -32,4 +32,8 @@ class MyAdapter()
     override fun getItemCount(): Int {
         return userList.size
     }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
 }
