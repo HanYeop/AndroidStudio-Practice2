@@ -30,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -42,4 +46,11 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    def lifecycle_version = "2.3.0"
+
+    // ViewModel - 라이프 사이클
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData - 데이터의 변경 사항을 알 수 있음
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 }

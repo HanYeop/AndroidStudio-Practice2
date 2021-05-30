@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RecyclerViewDataBindingEx</string>
+    <string name="user_format">이름은 %s 나이는 %d</string>
 </resources>
