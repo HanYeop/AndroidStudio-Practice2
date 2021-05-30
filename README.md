@@ -6,3 +6,9 @@
 Lottie 라이브러리 사용하여 애니메이션 만들기
 
 https://hanyeop.tistory.com/208
+
+## RecyclerViewDataBindingEx
+
+리사이클러뷰에서 DataBinding, LiveData 사용하기 (+ BindingAdapter)
+
+https://hanyeop.tistory.com/213
