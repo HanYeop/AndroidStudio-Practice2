@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.hanyeop.alarmex.Constant.Companion.ALARM_TIMER
 import com.hanyeop.alarmex.Constant.Companion.NOTIFICATION_ID
 import com.hanyeop.alarmex.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,30 +56,46 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
         }
 
-
+        // 일정 주기마다 알림
         binding.toggleButton2.setOnCheckedChangeListener { _, check ->
             val toastMessage = if (check) {
-                val repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES
-                /*
-                1. INTERVAL_FIFTEEN_MINUTES : 15분
-                2. INTERVAL_HALF_HOUR : 30분
-                3. INTERVAL_HOUR : 1시간
-                4. INTERVAL_HALF_DAY : 12시간
-                5. INTERVAL_DAY : 1일
-                 */
+                val repeatInterval : Long = ALARM_TIMER * 1000L
                 val triggerTime = (SystemClock.elapsedRealtime()
-                        + repeatInterval)
-                alarmManager.setInexactRepeating(
+                        +  repeatInterval)
+                alarmManager.setRepeating(
                     AlarmManager.ELAPSED_REALTIME_WAKEUP,
                     triggerTime, repeatInterval,
                     pendingIntent
-                ) // setInexactRepeating : 반복 알림
-                "${repeatInterval/60000}분 마다 알림이 발생합니다."
+                )
+                "${repeatInterval/1000}초 마다 알림이 발생합니다."
             } else {
                 alarmManager.cancel(pendingIntent)
                 "알림 예약을 취소하였습니다."
             }
             Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
         }
+
+        // realtime
+        binding.toggleButton3.setOnCheckedChangeListener { _, check ->
+            val toastMessage = if (check) {
+                val repeatInterval : Long = ALARM_TIMER * 1000L
+                val calendar = Calendar.getInstance().apply {
+                    timeInMillis = System.currentTimeMillis()
+                    set(Calendar.HOUR_OF_DAY,5)
+                    set(Calendar.MINUTE,30)
+                }
+                alarmManager.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    calendar.timeInMillis,
+                    repeatInterval,
+                    pendingIntent)
+                "알림이 발생합니다."
+            } else {
+                alarmManager.cancel(pendingIntent)
+                "알림 예약을 취소하였습니다."
+            }
+            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
