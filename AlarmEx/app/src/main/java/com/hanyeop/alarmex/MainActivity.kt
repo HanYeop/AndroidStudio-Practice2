@@ -54,5 +54,31 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
         }
+
+
+        binding.toggleButton2.setOnCheckedChangeListener { _, check ->
+            val toastMessage = if (check) {
+                val repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES
+                /*
+                1. INTERVAL_FIFTEEN_MINUTES : 15분
+                2. INTERVAL_HALF_HOUR : 30분
+                3. INTERVAL_HOUR : 1시간
+                4. INTERVAL_HALF_DAY : 12시간
+                5. INTERVAL_DAY : 1일
+                 */
+                val triggerTime = (SystemClock.elapsedRealtime()
+                        + repeatInterval)
+                alarmManager.setInexactRepeating(
+                    AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                    triggerTime, repeatInterval,
+                    pendingIntent
+                ) // setInexactRepeating : 반복 알림
+                "${repeatInterval/60000}분 마다 알림이 발생합니다."
+            } else {
+                alarmManager.cancel(pendingIntent)
+                "알림 예약을 취소하였습니다."
+            }
+            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
+        }
     }
 }
