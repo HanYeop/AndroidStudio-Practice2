@@ -30,7 +30,7 @@ class MyReceiver : BroadcastReceiver() {
         val contentPendingIntent = PendingIntent.getActivity(
             context,
             NOTIFICATION_ID, // requestCode
-            contentIntent,
+            contentIntent, // 알림 클릭 시 이동할 인텐트
             PendingIntent.FLAG_UPDATE_CURRENT
         /*
         1. FLAG_UPDATE_CURRENT : 현재 PendingIntent를 유지하고, 대신 인텐트의 extra data는 새로 전달된 Intent로 교체
