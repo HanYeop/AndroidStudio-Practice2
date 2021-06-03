@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DaggerHiltEx</string>
+    <string name="string_string2">2번째 테스트 문자가 주입되었습니다.</string>
 </resources>
