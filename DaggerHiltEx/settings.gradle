@@ -1,0 +1,2 @@
+rootProject.name = "DaggerHiltEx"
+include ':app'
