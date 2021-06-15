@@ -44,7 +44,7 @@ class MyPagingSource(
             LoadResult.Page(
                 data = post!!,
                 prevKey = if (position == STARTING_PAGE_INDEX) null else position - 1,
-                nextKey = null
+                nextKey = position + 1 // 계속 반복되게 해둠
             )
 
             // 로드에 실패 시 LoadResult.Error 반환
