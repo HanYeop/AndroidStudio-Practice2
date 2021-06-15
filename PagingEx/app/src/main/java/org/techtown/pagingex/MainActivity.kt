@@ -1,14 +1,16 @@
 package org.techtown.pagingex
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.techtown.pagingex.adapter.MyAdapter
 import org.techtown.pagingex.databinding.ActivityMainBinding
-import org.techtown.pagingex.repository.Repository
+import org.techtown.pagingex.paging.MyPagingRepository
 import org.techtown.pagingex.viewModel.MainViewModel
 import org.techtown.pagingex.viewModel.MainViewModelFactory
 
@@ -29,21 +31,24 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = myAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
-        val repository = Repository()
+        val repository = MyPagingRepository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel::class.java)
 
         // 받아온 값을 리싸이클러뷰에 보여줌
         binding.button.setOnClickListener {
-            viewModel.getCustomPosts2(Integer.parseInt(binding.editTextView.text.toString()),"id","asc")
-            viewModel.myCustomPosts2.observe(this, Observer {
-                if(it.isSuccessful){
-                    myAdapter.setData(it.body()!!)
-                }
-                else{
-                    Toast.makeText(this,it.code(), Toast.LENGTH_SHORT).show()
-                }
-            })
+            viewModel.searchPost(Integer.parseInt(binding.editTextView.text.toString()))
+            Log.d("tst5", "클릭됐음.")
+
+            // 포커스 없애기
+            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(binding.editTextView.windowToken, 0)
         }
+
+        // 관찰하여 submitData 메소드로 넘겨줌
+        viewModel.result.observe(this, Observer {
+            myAdapter.submitData(this.lifecycle,it)
+            Log.d("tst5", "호출됐음.")
+        })
     }
 }

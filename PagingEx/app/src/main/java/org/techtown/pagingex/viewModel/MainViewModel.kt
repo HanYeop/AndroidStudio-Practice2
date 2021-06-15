@@ -2,53 +2,23 @@ package org.techtown.pagingex.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
-import org.techtown.pagingex.model.Post
-import org.techtown.pagingex.repository.Repository
-import retrofit2.Response
+import androidx.paging.cachedIn
+import org.techtown.pagingex.paging.MyPagingRepository
 
 // 데이터를 처리함
-class MainViewModel(private val repository : Repository) : ViewModel() {
+class MainViewModel(private val repository : MyPagingRepository) : ViewModel() {
 
-    val myResponse : MutableLiveData<Response<Post>> = MutableLiveData()
-    val myResponse2 : MutableLiveData<Response<Post>> = MutableLiveData()
-    val myCustomPosts : MutableLiveData<Response<List<Post>>> = MutableLiveData()
-    val myCustomPosts2 : MutableLiveData<Response<List<Post>>> = MutableLiveData()
-    val myCustomPosts3 : MutableLiveData<Response<List<Post>>> = MutableLiveData()
+    private val myCustomPosts2 : MutableLiveData<Int> = MutableLiveData()
 
-    fun getPost() {
-        viewModelScope.launch {
-            val response = repository.getPost()
-            myResponse.value = response
-        }
+    // 라이브 데이터 변경 시 다른 라이브 데이터 발행
+    val result = myCustomPosts2.switchMap { queryString ->
+        repository.getPost(queryString).cachedIn(viewModelScope)
     }
 
-    fun getPost2(number : Int){
-        viewModelScope.launch {
-            val response = repository.getPost2(number)
-            myResponse2.value = response
-        }
-    }
-
-    fun getCustomPosts(userId : Int){
-        viewModelScope.launch {
-            val response = repository.getCustomPosts(userId)
-            myCustomPosts.value = response
-        }
-    }
-
-    fun getCustomPosts2(userId : Int, sort : String, order : String){
-        viewModelScope.launch {
-            val response = repository.getCustomPosts2(userId,sort,order)
-            myCustomPosts2.value = response
-        }
-    }
-
-    fun getCustomPosts3(userId : Int, option : Map<String, String>){
-        viewModelScope.launch {
-            val response = repository.getCustomPosts3(userId,option)
-            myCustomPosts3.value = response
-        }
+    // 라이브 데이터 변경
+    fun searchPost(userId: Int) {
+        myCustomPosts2.value = userId
     }
 }
