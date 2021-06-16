@@ -37,4 +37,9 @@ Paging 3 라이브러리 사용해보기 - (1) 데이터 페이징하기 https:/
 
 Paging 3 라이브러리 사용해보기 - (2) 로딩 상태 표시하기 https://hanyeop.tistory.com/230
 
+## NavigationEx
+
+Navigation 라이브러리 사용과 Safe Arg 로 데이터 통신 https://hanyeop.tistory.com/231
+
+
 
