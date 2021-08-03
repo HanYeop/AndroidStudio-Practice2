@@ -45,3 +45,9 @@ Navigation 라이브러리 사용과 Safe Arg 로 데이터 통신 https://hanye
 
 MotionLayout 사용하여 Animation 만들기 https://hanyeop.tistory.com/235
 
+## RecyclerViewEx2
+
+리사이클러뷰 갱신 효율성을 위한 ListAdapter 사용하기 https://hanyeop.tistory.com/245
+
+
+
