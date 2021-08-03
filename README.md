@@ -49,5 +49,7 @@ MotionLayout 사용하여 Animation 만들기 https://hanyeop.tistory.com/235
 
 리사이클러뷰 갱신 효율성을 위한 ListAdapter 사용하기 https://hanyeop.tistory.com/245
 
+리사이클러뷰 멀티 뷰타입 사용하기 https://hanyeop.tistory.com/247
+
 
 
