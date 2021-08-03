@@ -9,5 +9,6 @@ data class Item(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     val name : String,
-    val description : String
+    val description : String,
+    val type : Int
 )

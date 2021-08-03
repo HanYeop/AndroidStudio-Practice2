@@ -1,9 +1,6 @@
 package com.hanyeop.recyclerviewex2.data
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.hanyeop.recyclerviewex2.model.Item
 import kotlinx.coroutines.flow.Flow
 
@@ -16,4 +13,7 @@ interface ItemDao {
 
     @Query("SELECT * FROM item_table ORDER BY id ASC")
     fun readAllData() : Flow<List<Item>>
+
+    @Query("DELETE FROM item_table")
+    suspend fun deleteAll()
 }
