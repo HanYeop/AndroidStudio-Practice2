@@ -55,4 +55,5 @@ MotionLayout 사용하여 Animation 만들기 https://hanyeop.tistory.com/235
 
 CoordinatorLayout 사용하기 - (1) AppBar 숨기기 https://hanyeop.tistory.com/264
 
+CoordinatorLayout 사용하기 - (2) CollapsingToolbar 활용 https://hanyeop.tistory.com/265
 
