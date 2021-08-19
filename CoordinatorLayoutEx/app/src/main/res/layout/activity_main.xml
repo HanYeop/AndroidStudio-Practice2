@@ -11,15 +11,30 @@
         android:layout_width="match_parent"
         android:fitsSystemWindows="true">
 
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:fitsSystemWindows="true"
+            app:title="안녕하세요"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <ImageView
+            android:id="@+id/app_bar_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/cat"
+            android:scaleType="centerCrop" />
+
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_width="match_parent"
-                app:menu="@menu/menu_toolbar"
-                app:layout_scrollFlags="scroll|snap|enterAlways">
-
+                app:layout_collapseMode="pin"
+                app:menu="@menu/menu_toolbar">
             </com.google.android.material.appbar.MaterialToolbar>
 
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
