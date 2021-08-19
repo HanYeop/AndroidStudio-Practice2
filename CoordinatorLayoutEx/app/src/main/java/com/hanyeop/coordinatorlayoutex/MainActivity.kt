@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        // 툴바 설정
         setSupportActionBar(findViewById(R.id.toolbar))
 
         // 뷰 바인딩
@@ -30,5 +31,14 @@ class MainActivity : AppCompatActivity() {
         // 어댑터 연결
         binding.recyclerView.adapter = MyAdapter(nameList,descriptionList)
 
+        // 스와이프 새로고침
+        binding.apply {
+            // 새로고침할 내용 적어야함
+            pullToRefresh.setOnRefreshListener {
+
+                // 새로고침 아이콘 제거
+                pullToRefresh.isRefreshing = false
+            }
+        }
     }
 }
