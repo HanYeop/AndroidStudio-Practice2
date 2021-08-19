@@ -51,5 +51,8 @@ MotionLayout 사용하여 Animation 만들기 https://hanyeop.tistory.com/235
 
 리사이클러뷰 멀티 뷰타입 사용하기 https://hanyeop.tistory.com/247
 
+## CoordinatorLayoutEx
+
+CoordinatorLayout 사용하기 - (1) AppBar 숨기기 https://hanyeop.tistory.com/264
 
 
