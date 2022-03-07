@@ -29,6 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    // DataBinding
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -40,4 +45,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // 뷰모델 쉽게 생성하게 해줌 (ktx 확장라이브러리)
+    implementation "androidx.activity:activity-ktx:1.4.0"
 }
