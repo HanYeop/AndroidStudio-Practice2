@@ -62,3 +62,9 @@ CoordinatorLayout 사용하기 - (3) SwipeRefreshLayout 추가 https://hanyeop.t
 ## FlowEx
 
 코루틴 StateFlow, SharedFlow 사용하기 (vs LiveData) https://hanyeop.tistory.com/377
+
+## DataStoreEx
+
+안드로이드 SharedPreference 대신 Preferences DataStore 사용하기 https://hanyeop.tistory.com/378
+
+
