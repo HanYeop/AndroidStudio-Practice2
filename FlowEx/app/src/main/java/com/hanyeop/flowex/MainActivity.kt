@@ -2,13 +2,14 @@ package com.hanyeop.flowex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.hanyeop.flowex.databinding.ActivityMainBinding
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private val myViewModel : MyViewModel by viewModels()
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         // 데이터바인딩
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         // 뷰모델 연결
@@ -28,18 +29,20 @@ class MainActivity : AppCompatActivity() {
 //        // 1. LiveData
 //        myViewModel.liveData.observe(this){
 //            binding.textView.text = it.toString()
+//            Log.d("test5", "LiveData : $it")
 //        }
 //
 //        // 2. StateFlow
 //        lifecycleScope.launchWhenStarted {
 //            myViewModel.stateFlow.collectLatest {
 //                binding.textView2.text = it.toString()
+//                Log.d("test5", "StateFlow : $it")
 //            }
 //        }
 
         // 3. SharedFlow
         lifecycleScope.launchWhenStarted {
-            myViewModel.sharedFlow.collectLatest {
+            myViewModel.sharedFlow.collect {
                 Toast.makeText(this@MainActivity, it, Toast.LENGTH_SHORT).show()
             }
         }

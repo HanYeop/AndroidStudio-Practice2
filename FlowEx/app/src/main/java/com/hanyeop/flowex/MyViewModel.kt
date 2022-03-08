@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -15,7 +16,8 @@ class MyViewModel : ViewModel() {
     private val _stateFlow = MutableStateFlow(200)
     val stateFlow = _stateFlow.asStateFlow()
 
-    private val _sharedFlow = MutableSharedFlow<String>()
+    private val _sharedFlow = MutableSharedFlow<String>(
+        replay = 0, extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
     val sharedFlow = _sharedFlow.asSharedFlow()
 
     fun changeLiveData(){
