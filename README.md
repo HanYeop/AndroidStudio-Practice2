@@ -67,4 +67,6 @@ CoordinatorLayout 사용하기 - (3) SwipeRefreshLayout 추가 https://hanyeop.t
 
 안드로이드 SharedPreference 대신 Preferences DataStore 사용하기 https://hanyeop.tistory.com/378
 
+## BaseEX
 
+DataBinding 보일러 플레이트(반복) 제거하기 (BaseActivity,Fragment) https://hanyeop.tistory.com/380
