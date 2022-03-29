@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityResultLauncherEx">
         <activity
+            android:name=".SubTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubOneActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
