@@ -2,6 +2,7 @@ package com.hanyeop.navigationex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -29,6 +30,18 @@ class MainActivity : AppCompatActivity() {
 
         // 바텀 네비게이션 연결
         binding.bottomNavi.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            // 바텀 네비게이션이 표시되는 Fragment
+            if(destination.id == R.id.bottomOneFragment || destination.id == R.id.bottomTwoFragment
+                || destination.id == R.id.bottomThreeFragment || destination.id == R.id.oneFragment){
+                binding.bottomNavi.visibility = View.VISIBLE
+            }
+            // 바텀 네비게이션이 표시되지 않는 Fragment
+            else{
+                binding.bottomNavi.visibility = View.GONE
+            }
+        }
 
         // 앱 바 생성
         val appBarConfiguration = AppBarConfiguration(navController.graph)
