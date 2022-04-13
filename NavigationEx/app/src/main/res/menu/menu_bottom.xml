@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/bottomOneFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="1"
+        android:enabled="true"/>
+
+    <item android:id="@+id/bottomTwoFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="2"
+        android:enabled="true"/>
+
+    <item android:id="@+id/bottomThreeFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="3"
+        android:enabled="true"/>
+</menu>

@@ -34,4 +34,20 @@
             android:name="user"
             app:argType="com.hanyeop.navigationex.User" />
     </fragment>
+
+    <fragment
+        android:id="@+id/bottomOneFragment"
+        android:name="com.hanyeop.navigationex.BottomOneFragment"
+        android:label="fragment_bottom_one"
+        tools:layout="@layout/fragment_bottom_one" />
+    <fragment
+        android:id="@+id/bottomTwoFragment"
+        android:name="com.hanyeop.navigationex.BottomTwoFragment"
+        android:label="fragment_bottom_two"
+        tools:layout="@layout/fragment_bottom_two" />
+    <fragment
+        android:id="@+id/bottomThreeFragment"
+        android:name="com.hanyeop.navigationex.BottomThreeFragment"
+        android:label="fragment_bottom_three"
+        tools:layout="@layout/fragment_bottom_three" />
 </navigation>
