@@ -45,7 +45,9 @@ Navigation 라이브러리 BottomNavigationView 숨기기 https://hanyeop.tistor
 
 ## MotionLayoutEx
 
-MotionLayout 사용하여 Animation 만들기 https://hanyeop.tistory.com/235
+MotionLayout 사용하여 Animation 만들기 
+
+https://hanyeop.tistory.com/235
 
 ## RecyclerViewEx2
 
@@ -63,25 +65,42 @@ CoordinatorLayout 사용하기 - (3) SwipeRefreshLayout 추가 https://hanyeop.t
 
 ## FlowEx
 
-코루틴 StateFlow, SharedFlow 사용하기 (vs LiveData) https://hanyeop.tistory.com/377
+코루틴 StateFlow, SharedFlow 사용하기 (vs LiveData) 
+
+https://hanyeop.tistory.com/377
 
 ## DataStoreEx
 
-안드로이드 SharedPreference 대신 Preferences DataStore 사용하기 https://hanyeop.tistory.com/378
+안드로이드 SharedPreference 대신 Preferences DataStore 사용하기 
+
+https://hanyeop.tistory.com/378
 
 ## BaseEX
 
-DataBinding 보일러 플레이트(반복) 제거하기 (BaseActivity,Fragment) https://hanyeop.tistory.com/380
+DataBinding 보일러 플레이트(반복) 제거하기 (BaseActivity,Fragment)
+
+https://hanyeop.tistory.com/380
 
 ## WeatherApiEx
 
-안드로이드 기상청 날씨 API 사용하기 (공공데이터포털 단기예보 조회서비스) https://hanyeop.tistory.com/388
+안드로이드 기상청 날씨 API 사용하기 (공공데이터포털 단기예보 조회서비스) 
+
+https://hanyeop.tistory.com/388
 
 ## ActivityResultLauncherEx
 
-startActivityForResult 대신 ActivityResultLauncher 사용하기 https://hanyeop.tistory.com/393
+startActivityForResult 대신 ActivityResultLauncher 사용하기 
+
+https://hanyeop.tistory.com/393
 
 ## RatingBarDialogEx
 
-안드로이드 RatingBar, SimpleRatingBar 사용하여 평점 기능 구현하기 (+Dialog) https://hanyeop.tistory.com/405
+안드로이드 RatingBar, SimpleRatingBar 사용하여 평점 기능 구현하기 (+Dialog) 
 
+https://hanyeop.tistory.com/405
+
+## PermissionEx
+
+안드로이드 TedPermission 라이브러리 활용하여 권한 체크하기
+
+https://hanyeop.tistory.com/406
