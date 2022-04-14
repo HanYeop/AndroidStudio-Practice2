@@ -26,7 +26,9 @@
         app:srb_starHeight="30dp"
         app:srb_starPadding="15dp"
         app:srb_starWidth="30dp"
-        app:srb_stepSize="0.5" />
+        app:srb_stepSize="0.5"
+        app:srb_drawableEmpty="@drawable/coffee_non"
+        app:srb_drawableFilled="@drawable/coffee_fill"/>
 
     <com.willy.ratingbar.ScaleRatingBar
         android:id="@+id/scaleRatingBar"
@@ -46,7 +48,9 @@
         app:srb_starHeight="30dp"
         app:srb_starPadding="15dp"
         app:srb_starWidth="30dp"
-        app:srb_stepSize="0.5"/>
+        app:srb_stepSize="0.5"
+        app:srb_drawableEmpty="@drawable/coffee_non"
+        app:srb_drawableFilled="@drawable/coffee_fill"/>
 
     <com.willy.ratingbar.RotationRatingBar
         android:id="@+id/rotationRatingBar"
@@ -65,6 +69,8 @@
         app:srb_starHeight="30dp"
         app:srb_starPadding="15dp"
         app:srb_starWidth="30dp"
-        app:srb_stepSize="0.5" />
+        app:srb_stepSize="0.5"
+        app:srb_drawableEmpty="@drawable/coffee_non"
+        app:srb_drawableFilled="@drawable/coffee_fill"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
