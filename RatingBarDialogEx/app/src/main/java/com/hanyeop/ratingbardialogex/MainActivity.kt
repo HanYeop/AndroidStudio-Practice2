@@ -1,5 +1,6 @@
 package com.hanyeop.ratingbardialogex
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -15,10 +16,18 @@ class MainActivity : AppCompatActivity(), RatingListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initClickListener()
+    }
+
+    private fun initClickListener(){
         binding.apply {
             btnRating.setOnClickListener {
                 val dialog = RatingDialog(this@MainActivity, this@MainActivity)
                 dialog.show()
+            }
+            btnSub.setOnClickListener {
+                val intent = Intent(this@MainActivity,SubActivity::class.java)
+                startActivity(intent)
             }
         }
     }
