@@ -41,6 +41,8 @@ Paging 3 라이브러리 사용해보기 - (2) 로딩 상태 표시하기 https:
 
 Navigation 라이브러리 사용과 Safe Arg 로 데이터 통신 https://hanyeop.tistory.com/231
 
+Navigation 라이브러리 BottomNavigationView 숨기기 https://hanyeop.tistory.com/403
+
 ## MotionLayoutEx
 
 MotionLayout 사용하여 Animation 만들기 https://hanyeop.tistory.com/235
@@ -70,3 +72,16 @@ CoordinatorLayout 사용하기 - (3) SwipeRefreshLayout 추가 https://hanyeop.t
 ## BaseEX
 
 DataBinding 보일러 플레이트(반복) 제거하기 (BaseActivity,Fragment) https://hanyeop.tistory.com/380
+
+## WeatherApiEx
+
+안드로이드 기상청 날씨 API 사용하기 (공공데이터포털 단기예보 조회서비스) https://hanyeop.tistory.com/388
+
+## ActivityResultLauncherEx
+
+startActivityForResult 대신 ActivityResultLauncher 사용하기 https://hanyeop.tistory.com/393
+
+## RatingBarDialogEx
+
+안드로이드 RatingBar, SimpleRatingBar 사용하여 평점 기능 구현하기 (+Dialog) https://hanyeop.tistory.com/405
+
