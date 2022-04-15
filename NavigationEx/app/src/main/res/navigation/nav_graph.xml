@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/oneFragment">
+    app:startDestination="@id/bottomOneFragment">
 
     <fragment
         android:id="@+id/oneFragment"
@@ -21,7 +21,13 @@
         android:id="@+id/twoFragment"
         android:name="com.hanyeop.navigationex.TwoFragment"
         android:label="fragment_two"
-        tools:layout="@layout/fragment_two" />
+        tools:layout="@layout/fragment_two" >
+        <action
+            android:id="@+id/action_twoFragment_to_oneFragment"
+            app:destination="@id/oneFragment"
+            app:popUpTo="@id/oneFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
     <fragment
         android:id="@+id/threeFragment"
         android:name="com.hanyeop.navigationex.ThreeFragment"
@@ -39,7 +45,11 @@
         android:id="@+id/bottomOneFragment"
         android:name="com.hanyeop.navigationex.BottomOneFragment"
         android:label="fragment_bottom_one"
-        tools:layout="@layout/fragment_bottom_one" />
+        tools:layout="@layout/fragment_bottom_one" >
+        <action
+            android:id="@+id/action_bottomOneFragment_to_oneFragment"
+            app:destination="@id/oneFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bottomTwoFragment"
         android:name="com.hanyeop.navigationex.BottomTwoFragment"

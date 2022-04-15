@@ -3,6 +3,7 @@ package com.hanyeop.navigationex
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             // 바텀 네비게이션이 표시되는 Fragment
             if(destination.id == R.id.bottomOneFragment || destination.id == R.id.bottomTwoFragment
-                || destination.id == R.id.bottomThreeFragment || destination.id == R.id.oneFragment){
+                || destination.id == R.id.bottomThreeFragment){
                 binding.bottomNavi.visibility = View.VISIBLE
             }
             // 바텀 네비게이션이 표시되지 않는 Fragment
@@ -51,5 +52,16 @@ class MainActivity : AppCompatActivity() {
     // 뒤로가기
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    var waitTime = 0L
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if(System.currentTimeMillis() - waitTime >=1500 ) {
+            waitTime = System.currentTimeMillis()
+            Toast.makeText(this,"뒤로가기 버튼을 한번 더 누르면 종료됩니다.",Toast.LENGTH_SHORT).show()
+        } else {
+            finish() // 액티비티 종료
+        }
     }
 }
