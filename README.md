@@ -106,3 +106,9 @@ https://hanyeop.tistory.com/405
 안드로이드 TedPermission 라이브러리 활용하여 권한 체크하기
 
 https://hanyeop.tistory.com/406
+
+## BindingAdapterEx
+
+리사이클러뷰 BindingAdapter, ListAdapter 사용하여 데이터바인딩 하기
+
+https://hanyeop.tistory.com/408
