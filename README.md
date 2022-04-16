@@ -43,7 +43,7 @@ Navigation 라이브러리 사용과 Safe Arg 로 데이터 통신 https://hanye
 
 Navigation 라이브러리 BottomNavigationView 숨기기 https://hanyeop.tistory.com/403
 
-Navigation 라이브러리 Stack 관리하기 https://hanyeop.tistory.com/407
+Navigation 라이브러리 Stack 관리하기, 특정 Fragment BackPress 처리 https://hanyeop.tistory.com/407
 
 ## MotionLayoutEx
 
