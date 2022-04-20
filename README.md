@@ -21,9 +21,9 @@ https://hanyeop.tistory.com/217
 
 ## DaggerHiltEx
 
-Dagger Hilt 사용하여 의존성 주입(DI) 하기
+Dagger Hilt 사용하여 의존성 주입(DI) 하기 https://hanyeop.tistory.com/220
 
-https://hanyeop.tistory.com/220
+Dagger Hilt 사용시 Class 의존성 주입 https://hanyeop.tistory.com/412
 
 ## KakaoApiEx
 
