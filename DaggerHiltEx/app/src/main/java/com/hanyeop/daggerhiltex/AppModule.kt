@@ -32,6 +32,10 @@ object AppModule {
         @ApplicationContext context : Context,
         @Named("String1") string1 : String
     ) = "${context.getString(R.string.string_string2)} 그리고, $string1"
+
+//    @Singleton
+//    @Provides
+//    fun provideClass() = Data()
 }
 
 //@Module
