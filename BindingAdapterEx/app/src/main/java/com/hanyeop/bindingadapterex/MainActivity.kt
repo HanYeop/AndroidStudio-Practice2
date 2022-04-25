@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         binding.apply {
+            recyclerView.adapter = MyAdapter()
             lifecycleOwner = this@MainActivity
             viewModel = mainViewModel
         }

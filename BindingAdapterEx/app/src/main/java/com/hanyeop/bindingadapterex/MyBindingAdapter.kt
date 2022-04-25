@@ -12,11 +12,11 @@ object MyBindingAdapter {
     @JvmStatic
     fun RecyclerView.setItems(items : ArrayList<User>){
 
-        // 어댑터 최초 연결
-        if(this.adapter == null) {
-            val adapter = MyAdapter()
-            this.adapter = adapter
-        }
+//        // 어댑터 최초 연결
+//        if(this.adapter == null) {
+//            val adapter = MyAdapter()
+//            this.adapter = adapter
+//        }
 
         val myAdapter = this.adapter as MyAdapter
 
