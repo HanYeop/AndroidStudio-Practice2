@@ -13,7 +13,7 @@ abstract class BaseFragment<T: ViewDataBinding>(
     @LayoutRes val layoutResId: Int
 ) : Fragment(){
     private var _binding: T? = null
-    val binding get() = _binding!!
+    protected val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +27,10 @@ abstract class BaseFragment<T: ViewDataBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
+        init()
     }
+
+    protected abstract fun init()
 
     override fun onDestroyView() {
         super.onDestroyView()

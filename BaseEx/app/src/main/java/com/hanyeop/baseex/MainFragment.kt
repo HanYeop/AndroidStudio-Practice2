@@ -19,6 +19,10 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
         }
     }
 
+    override fun init() {
+
+    }
+
     fun changeStateFlow(){
         _stateFlow.value = _stateFlow.value.plus(1)
     }
