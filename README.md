@@ -115,4 +115,6 @@ https://hanyeop.tistory.com/408
 
 ## DialogEx
 
-안드로이드 다이얼로그 사용하기 https://hanyeop.tistory.com/422
+안드로이드 다이얼로그 사용하기 
+
+https://hanyeop.tistory.com/422
