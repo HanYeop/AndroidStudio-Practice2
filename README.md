@@ -112,3 +112,9 @@ https://hanyeop.tistory.com/406
 리사이클러뷰 BindingAdapter, ListAdapter 사용하여 데이터바인딩 하기
 
 https://hanyeop.tistory.com/408
+
+## DialogEx
+
+안드로이드 다이얼로그 사용하기 
+
+https://hanyeop.tistory.com/422
