@@ -7,11 +7,18 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.hanyeop.bindingadapterex.databinding.MainItemBinding
 
-class MyAdapter()
+class MyAdapter(private val listener: ItemClickListener)
     : ListAdapter <User, MyAdapter.MyViewHolder> (diffUtil) {
 
     // 생성된 뷰 홀더에 값 지정
     inner class MyViewHolder(private val binding: MainItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            // 클릭 된 아이템 객체 넘겨줌
+            binding.root.setOnClickListener {
+                listener.onClicked(getItem(adapterPosition))
+            }
+        }
+
         fun bind(currentUser : User) {
             binding.user = currentUser
         }
