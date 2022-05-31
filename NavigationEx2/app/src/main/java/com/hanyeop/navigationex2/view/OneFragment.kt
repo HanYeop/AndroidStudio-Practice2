@@ -6,6 +6,7 @@ import com.hanyeop.navigationex2.R
 import com.hanyeop.navigationex2.adapter.MainAdapter
 import com.hanyeop.navigationex2.databinding.FragmentOneBinding
 import com.hanyeop.navigationex2.viewmodel.MainViewModel
+import java.util.*
 
 class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one) {
 
@@ -14,14 +15,20 @@ class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one) {
 
     override fun init() {
 
-        mainViewModel.getPost(1)
+        mainViewModel.getPost(Random().nextInt(10) + 1)
 
         binding.apply {
             recyclerView.adapter = mainAdapter
+
+            // 새로고침 시 api 다시 호출 (1~10)
+            pullRefresh.setOnRefreshListener {
+                mainViewModel.getPost(Random().nextInt(10) + 1)
+            }
         }
 
         mainViewModel.postList.observe(viewLifecycleOwner){
             mainAdapter.submitList(it)
+            binding.pullRefresh.isRefreshing = false
         }
     }
 }
