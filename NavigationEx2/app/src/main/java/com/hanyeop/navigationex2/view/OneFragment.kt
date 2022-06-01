@@ -5,7 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import com.hanyeop.navigationex2.ApplicationClass.Companion.TAG
 import com.hanyeop.navigationex2.BaseFragment
 import com.hanyeop.navigationex2.R
@@ -17,7 +17,7 @@ import java.util.*
 
 class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one),AdapterListener {
 
-    private val mainViewModel by viewModels<MainViewModel>()
+    private val mainViewModel by activityViewModels<MainViewModel>()
     private val mainAdapter = MainAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +57,10 @@ class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one),Adap
         mainViewModel.postList.observe(viewLifecycleOwner){
             mainAdapter.submitList(it)
             binding.pullRefresh.isRefreshing = false
+        }
+
+        mainViewModel.oneState.observe(viewLifecycleOwner){
+            binding.recyclerView.smoothScrollToPosition(0)
         }
     }
 
