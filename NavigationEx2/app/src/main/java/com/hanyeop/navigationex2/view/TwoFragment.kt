@@ -24,7 +24,7 @@ class TwoFragment : BaseFragment<FragmentTwoBinding>(R.layout.fragment_two),Adap
     }
 
     override fun init() {
-        Log.d(TAG, "init: Two")
+        Log.d(TAG, "onViewCreated: Two")
         mainViewModel.getPost(Random().nextInt(10) + 1)
 
         binding.apply {

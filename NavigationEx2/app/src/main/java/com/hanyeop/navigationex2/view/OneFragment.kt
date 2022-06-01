@@ -2,6 +2,9 @@ package com.hanyeop.navigationex2.view
 
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.hanyeop.navigationex2.ApplicationClass.Companion.TAG
 import com.hanyeop.navigationex2.BaseFragment
@@ -25,13 +28,22 @@ class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one),Adap
         mainViewModel.getPost(Random().nextInt(10) + 1)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        Log.d(TAG, "onCreateView: One")
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
     override fun onDestroyView() {
         Log.d(TAG, "onDestroyView: One")
         super.onDestroyView()
     }
 
     override fun init() {
-        Log.d(TAG, "init: One")
+        Log.d(TAG, "onViewCreated: One")
 
         binding.apply {
             recyclerView.adapter = mainAdapter
@@ -51,7 +63,11 @@ class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one),Adap
     // 아이템 클릭 시 DetailFragment 로 전환
     override fun onItemClicked() {
         requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView,DetailFragment())
+            .setCustomAnimations(R.anim.vertical_enter,
+                R.anim.none,
+                R.anim.none,
+                R.anim.vertical_exit)
+            .add(R.id.fragmentContainerView,DetailFragment())
             .addToBackStack(null)
             .commit()
     }
