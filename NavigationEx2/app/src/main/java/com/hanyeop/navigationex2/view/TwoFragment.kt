@@ -42,6 +42,7 @@ class TwoFragment : BaseFragment<FragmentTwoBinding>(R.layout.fragment_two),Adap
         }
     }
 
+    // 아이템 클릭 시 DetailActivity 로 전환
     override fun onItemClicked() {
         startActivity(Intent(requireContext(),DetailActivity::class.java))
     }
