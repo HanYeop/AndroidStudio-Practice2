@@ -23,4 +23,15 @@
         android:label="fragment_three"
         tools:layout="@layout/fragment_three" />
 
+    <fragment
+        android:id="@+id/floatingFragment"
+        android:name="com.hanyeop.navigationex2.view.FloatingFragment"
+        android:label="FloatingFragment"
+        tools:layout="@layout/fragment_floating"/>
+    <action android:id="@+id/action_global_floatingFragment"
+        app:destination="@id/floatingFragment" />
+    <action android:id="@+id/action_global_oneFragment"
+        app:destination="@id/oneFragment"
+        />
+
 </navigation>
