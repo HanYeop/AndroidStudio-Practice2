@@ -118,3 +118,9 @@ https://hanyeop.tistory.com/408
 안드로이드 다이얼로그 사용하기 
 
 https://hanyeop.tistory.com/422
+
+## NavigationEx2
+
+프래그먼트 화면 전환 시 상태 유지하기
+
+https://hanyeop.tistory.com/425
