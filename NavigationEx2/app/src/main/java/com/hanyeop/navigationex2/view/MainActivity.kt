@@ -1,28 +1,19 @@
 package com.hanyeop.navigationex2.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.hanyeop.navigationex2.R
 import com.hanyeop.navigationex2.databinding.ActivityMainBinding
 
-private const val TAG = "테스트"
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
     private val fragmentManager = supportFragmentManager
 
     private var oneFragment: OneFragment? = null
     private var twoFragment: TwoFragment? = null
     private var threeFragment: ThreeFragment? = null
-    private var floatingFragment = FloatingFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +22,6 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         initBottomNavigation()
-
-        binding.floatingActionButton.setOnClickListener{
-            fragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,floatingFragment)
-                .addToBackStack(null)
-                .commit()
-        }
     }
 
     private fun initBottomNavigation(){
@@ -86,6 +70,15 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
             }
+        }
+    }
+
+    companion object{
+        private lateinit var binding : ActivityMainBinding
+
+        // 바텀네비게이션 가림
+        fun hideNavi(state: Boolean){
+            if(state) binding.bottomNavi.visibility = View.GONE else binding.bottomNavi.visibility = View.VISIBLE
         }
     }
 }

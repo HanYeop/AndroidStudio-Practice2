@@ -1,20 +1,29 @@
 package com.hanyeop.navigationex2.view
 
+import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.viewModels
+import com.hanyeop.navigationex2.ApplicationClass.Companion.TAG
 import com.hanyeop.navigationex2.BaseFragment
 import com.hanyeop.navigationex2.R
+import com.hanyeop.navigationex2.adapter.AdapterListener
 import com.hanyeop.navigationex2.adapter.MainAdapter
 import com.hanyeop.navigationex2.databinding.FragmentTwoBinding
 import com.hanyeop.navigationex2.viewmodel.MainViewModel
 import java.util.*
 
-class TwoFragment : BaseFragment<FragmentTwoBinding>(R.layout.fragment_two) {
+class TwoFragment : BaseFragment<FragmentTwoBinding>(R.layout.fragment_two),AdapterListener {
 
     private val mainViewModel by viewModels<MainViewModel>()
-    private val mainAdapter = MainAdapter()
+    private val mainAdapter = MainAdapter(this)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d(TAG, "onCreate: Two")
+        super.onCreate(savedInstanceState)
+    }
 
     override fun init() {
-
+        Log.d(TAG, "init: Two")
         mainViewModel.getPost(Random().nextInt(10) + 1)
 
         binding.apply {
@@ -30,5 +39,12 @@ class TwoFragment : BaseFragment<FragmentTwoBinding>(R.layout.fragment_two) {
             mainAdapter.submitList(it)
             binding.pullRefresh.isRefreshing = false
         }
+    }
+
+    override fun onItemClicked() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView,DetailFragment())
+            .addToBackStack(null)
+            .commit()
     }
 }

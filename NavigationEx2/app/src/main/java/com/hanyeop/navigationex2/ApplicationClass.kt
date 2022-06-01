@@ -5,6 +5,10 @@ import com.hanyeop.navigationex2.repository.Repository
 
 class ApplicationClass : Application(){
 
+    companion object{
+        const val TAG = "테스트"
+    }
+
     override fun onCreate() {
         super.onCreate()
 

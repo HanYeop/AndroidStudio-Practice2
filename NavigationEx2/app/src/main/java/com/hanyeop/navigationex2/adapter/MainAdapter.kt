@@ -8,10 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hanyeop.navigationex2.databinding.ItemLayoutBinding
 import com.hanyeop.navigationex2.model.Post
 
-class MainAdapter : ListAdapter<Post, MainAdapter.MyViewHolder>(diffUtil) {
+class MainAdapter(private val listener: AdapterListener) : ListAdapter<Post, MainAdapter.MyViewHolder>(diffUtil) {
 
     // 생성된 뷰 홀더에 값 지정
     inner class MyViewHolder(private val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                listener.onItemClicked()
+            }
+        }
         fun bind(post: Post) {
             binding.post = post
         }
