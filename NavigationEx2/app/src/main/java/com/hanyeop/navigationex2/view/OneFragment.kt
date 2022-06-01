@@ -20,7 +20,14 @@ class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one),Adap
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate: One")
         super.onCreate(savedInstanceState)
+
+        // 처음 생성시에만 실행할 메소드
         mainViewModel.getPost(Random().nextInt(10) + 1)
+    }
+
+    override fun onDestroyView() {
+        Log.d(TAG, "onDestroyView: One")
+        super.onDestroyView()
     }
 
     override fun init() {
@@ -41,6 +48,7 @@ class OneFragment : BaseFragment<FragmentOneBinding>(R.layout.fragment_one),Adap
         }
     }
 
+    // 아이템 클릭 시 DetailFragment 로 전환
     override fun onItemClicked() {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainerView,DetailFragment())

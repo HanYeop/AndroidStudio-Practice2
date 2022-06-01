@@ -1,5 +1,6 @@
 package com.hanyeop.navigationex2.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.viewModels
@@ -42,9 +43,6 @@ class TwoFragment : BaseFragment<FragmentTwoBinding>(R.layout.fragment_two),Adap
     }
 
     override fun onItemClicked() {
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView,DetailFragment())
-            .addToBackStack(null)
-            .commit()
+        startActivity(Intent(requireContext(),DetailActivity::class.java))
     }
 }
