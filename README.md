@@ -121,6 +121,6 @@ https://hanyeop.tistory.com/422
 
 ## NavigationEx2
 
-프래그먼트 화면 전환 시 상태 유지하기
+프래그먼트 화면 전환 시 상태 유지하기 https://hanyeop.tistory.com/425
 
-https://hanyeop.tistory.com/425
+안드로이드 Activity 전환 애니메이션 추가하기 https://hanyeop.tistory.com/427
