@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.SplashEx.Splash" parent="Theme.SplashScreen">
+        <!--  배경 색상 -->
+        <item name="windowSplashScreenBackground">#1441BA</item>
+        <!--  일반 아이콘 또는 애니메이션 아이콘. 보통 런처 아이콘을 사용. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <!-- SplahScreen이 사라진 후 Activity에 적용할 테마를 지정한다. -->
+        <item name="postSplashScreenTheme">@style/Theme.SplashEx</item>
+    </style>
 </resources>
