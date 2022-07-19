@@ -54,6 +54,10 @@ https://hanyeop.tistory.com/422
 
 ## ExoPlayerEX
 
+ExoPlayer 사용하여 동영상 재생하기
+
+https://hanyeop.tistory.com/435
+
 ## FlowEx
 
 코루틴 StateFlow, SharedFlow 사용하기 (vs LiveData)
