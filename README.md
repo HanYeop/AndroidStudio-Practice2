@@ -64,6 +64,12 @@ https://hanyeop.tistory.com/435
 
 https://hanyeop.tistory.com/377
 
+## FlowLifeCycleEx
+
+코루틴 Flow 생명주기 관리하기 (launchWhenStarted, repeatOnLifecycle)
+
+https://hanyeop.tistory.com/437
+
 ## KakaoApiEx
 
 카카오 이미지 검색 API 사용하기
