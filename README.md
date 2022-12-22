@@ -92,6 +92,10 @@ MotionLayout 사용하여 Animation 만들기
 
 https://hanyeop.tistory.com/235
 
+## MultiModuleEx
+
+Kotlin DSL 활용한 멀티모듈 버전 관리
+
 ## NavigationEx
 
 Navigation 라이브러리 사용과 Safe Arg 로 데이터 통신 https://hanyeop.tistory.com/231
@@ -137,6 +141,12 @@ https://hanyeop.tistory.com/213
 리사이클러뷰 멀티 뷰타입 사용하기 https://hanyeop.tistory.com/247
 
 ## SplashEx
+
+안드로이드 12 스플래시
+
+## TestCodelabs
+
+테스트코드 코드랩
 
 ## WeatherApiEx
 
