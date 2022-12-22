@@ -140,6 +140,10 @@ https://hanyeop.tistory.com/213
 
 리사이클러뷰 멀티 뷰타입 사용하기 https://hanyeop.tistory.com/247
 
+## RoomAndroidTestEx
+
+Room 커버리지, 계측 테스트
+
 ## SplashEx
 
 안드로이드 12 스플래시
