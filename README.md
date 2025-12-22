@@ -152,6 +152,10 @@ Room 커버리지, 계측 테스트
 
 안드로이드 12 스플래시
 
+## SupabaseSample
+
+안드로이드 수퍼베이스 연동 샘플
+
 ## TestCodelabs
 
 테스트코드 코드랩
