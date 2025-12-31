@@ -1,7 +1,12 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    kotlin("plugin.serialization") version "2.2.0"
 }
 
 android {
@@ -10,14 +15,21 @@ android {
         version = release(36)
     }
 
+    val properties = Properties()
+    properties.load(FileInputStream(rootProject.file("local.properties")))
+
     defaultConfig {
         applicationId = "com.example.supabasesample2"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // BuildConfig에 API Key 추가
+        buildConfigField("String", "supabaseUrl", properties.getProperty("supabaseUrl"))
+        buildConfigField("String", "supabaseKey", properties.getProperty("supabaseKey"))
     }
 
     buildTypes {
@@ -38,6 +50,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -57,4 +70,8 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    implementation(platform("io.github.jan-tennert.supabase:bom:3.3.0-rc-1"))
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    implementation("io.ktor:ktor-client-android:3.3.3")
 }
