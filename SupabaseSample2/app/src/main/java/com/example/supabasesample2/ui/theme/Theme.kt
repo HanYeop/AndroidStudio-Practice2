@@ -9,6 +9,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
@@ -56,3 +57,8 @@ fun SupabaseSample2Theme(
         content = content
     )
 }
+
+val purple = Color(0xFFAF61E2)
+val darkPurple = Color(0xFF2D115A)
+val black = Color(0xFF010101)
+val darkGray = Color(0xFF1A1A1A)

@@ -1,5 +1,6 @@
 package com.example.supabasesample2
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -20,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.example.supabasesample2.ui.theme.SupabaseSample2Theme
 import io.github.jan.supabase.createSupabaseClient
@@ -47,6 +49,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     var instruments by remember { mutableStateOf<List<Instrument>>(emptyList()) }
                     val scope = rememberCoroutineScope()
+                    val context = LocalContext.current
 
                     Column(modifier = Modifier.padding(innerPadding)) {
                         Button(onClick = {
@@ -67,6 +70,10 @@ class MainActivity : ComponentActivity() {
                             }
                         }) {
                             Text("데이터 가져오기")
+                        }
+
+                        Button(onClick = { context.startActivity(Intent(context, ComposeActivity2::class.java)) }) {
+                            Text("새 액티비티 열기")
                         }
 
                         InstrumentsList(instruments = instruments, modifier = Modifier.padding(top = 8.dp))
