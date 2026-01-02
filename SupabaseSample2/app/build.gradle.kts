@@ -71,7 +71,20 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
-    implementation(platform("io.github.jan-tennert.supabase:bom:3.3.0-rc-1"))
-    implementation("io.github.jan-tennert.supabase:postgrest-kt")
-    implementation("io.ktor:ktor-client-android:3.3.3")
+//    implementation(platform("io.github.jan-tennert.supabase:bom:3.3.0-rc-1"))
+//    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+//    implementation("io.ktor:ktor-client-android:3.3.3")
+
+    // MARK: Google
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+
+    // MARK: Supabase
+    implementation(platform(libs.supabase.bom))
+    implementation(libs.auth.kt)
+    implementation(libs.postgrest.kt)
+
+
+    implementation(libs.ktor.client.okhttp)
 }
