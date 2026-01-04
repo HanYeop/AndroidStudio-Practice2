@@ -70,6 +70,8 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.0")
 
 //    implementation(platform("io.github.jan-tennert.supabase:bom:3.3.0-rc-1"))
 //    implementation("io.github.jan-tennert.supabase:postgrest-kt")
